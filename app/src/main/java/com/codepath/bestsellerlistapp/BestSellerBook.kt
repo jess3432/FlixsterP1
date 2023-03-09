@@ -3,33 +3,23 @@ package com.codepath.bestsellerlistapp
 import com.google.gson.annotations.SerializedName
 
 /**
- * The Model for storing a single book from the NY Times API
+ * The Model for storing a movie from the Movie DB
  *
  * SerializedName tags MUST match the JSON response for the
  * object to correctly parse with the gson library.
  */
 class BestSellerBook {
-    @SerializedName("rank")
-    var rank = 0
-
+    //Movie Title
     @JvmField
-    @SerializedName("title")
+    @SerializedName("original_title")
     var title: String? = null
 
+    //Movie Image URL
     @JvmField
-    @SerializedName("author")
-    var author: String? = null
+    @SerializedName("poster_path")
+    var movieImageUrl: String? = null
 
-    //TODO bookImageUrl
-    @SerializedName("book_image")
-    var bookImageUrl: String? = null
-
-    //TODO description
-    @SerializedName("description")
+    @JvmField
+    @SerializedName("overview")
     var description: String? = null
-
-
-    //TODO-STRETCH-GOALS amazonUrl
-    @SerializedName("amazon_product_url")
-    var amazonUrl: String? = null
 }

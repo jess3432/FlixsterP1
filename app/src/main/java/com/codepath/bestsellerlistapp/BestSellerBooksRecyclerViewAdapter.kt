@@ -35,15 +35,12 @@ class BestSellerBooksRecyclerViewAdapter(
      */
     inner class BookViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         var mItem: BestSellerBook? = null
-        val mBookTitle: TextView = mView.findViewById<View>(id.book_title) as TextView
-        val mBookAuthor: TextView = mView.findViewById<View>(id.book_author) as TextView
-        val mBookRanking: TextView = mView.findViewById<View>(id.ranking) as TextView
-        val mBookDescription: TextView = mView.findViewById<View>(id.book_description) as TextView
-        val mBookImage: ImageView = mView.findViewById<View>(id.book_image) as ImageView
-        val mBookButton: Button = mView.findViewById<View>(id.buy_button) as Button
+        val mBookTitle: TextView = mView.findViewById<View>(id.movie_title) as TextView
+        val mBookDescription: TextView = mView.findViewById<View>(id.movie_description) as TextView
+        val mBookImage: ImageView = mView.findViewById<View>(id.movie_image) as ImageView
 
         override fun toString(): String {
-            return mBookTitle.toString() + " '" + mBookAuthor.text + "'"
+            return mBookTitle.toString() + " '" + mBookDescription.text + "'"
         }
     }
 
@@ -55,12 +52,10 @@ class BestSellerBooksRecyclerViewAdapter(
 
         holder.mItem = book
         holder.mBookTitle.text = book.title
-        holder.mBookAuthor.text = book.author
         holder.mBookDescription.text = book.description
-        holder.mBookRanking.text = book.rank.toString()
 
         Glide.with(holder.mView)
-            .load(book.bookImageUrl)
+            .load("https://image.tmdb.org/t/p/w500/" + book.movieImageUrl)
             .centerInside()
             .into(holder.mBookImage)
 
@@ -70,10 +65,6 @@ class BestSellerBooksRecyclerViewAdapter(
             }
         }
 
-        holder.mBookButton.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(book.amazonUrl))
-            startActivity(it.context, browserIntent, null)
-        }
     }
 
     /**

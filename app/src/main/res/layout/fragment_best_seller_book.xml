@@ -7,81 +7,41 @@
     android:layout_height="wrap_content"
     android:layout_margin="6dp">
 
-    <TextView
-        android:id="@+id/ranking"
-        android:textSize="22sp"
-        android:fontFamily="serif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text='1' />
 
     <ImageView
-        android:id="@+id/book_image"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:id="@+id/movie_image"
+        android:layout_width="177dp"
+        android:layout_height="247dp"
+        android:padding="6dp"
         android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintStart_toEndOf="@+id/ranking"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/book_title"
-        android:layout_width="152dp"
+        android:id="@+id/movie_title"
+        android:layout_width="183dp"
         android:layout_height="50dp"
-        android:layout_marginStart="13dp"
+        android:fontFamily="serif"
+        android:textAppearance="?attr/textAppearanceListItem"
         android:textStyle="bold"
-        android:padding="2dp"
         app:autoSizeMaxTextSize="20dp"
         app:autoSizeMinTextSize="9dp"
         app:autoSizeTextType="uniform"
-        android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_image"
-        tools:text="Book Title" />
+        app:layout_constraintStart_toEndOf="@+id/movie_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Movie Title" />
 
     <TextView
-        android:id="@+id/book_description"
-        android:layout_width="140dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="12dp"
+        android:id="@+id/movie_description"
+        android:layout_width="183dp"
+        android:layout_height="189dp"
         android:textAppearance="?attr/textAppearanceListItem"
         app:autoSizeMaxTextSize="20dp"
-        app:autoSizeMinTextSize="10dp"
+        app:autoSizeMinTextSize="9dp"
         app:autoSizeTextType="uniform"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_author"
-        tools:text="Description of book" />
-
-    <TextView
-        android:id="@+id/book_author"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        app:autoSizeMaxTextSize="17dp"
-        app:autoSizeMinTextSize="7dp"
-        app:autoSizeTextType="uniform"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_title"
-        tools:text="Anonymous" />
-
-    <Button
-        android:id="@+id/buy_button"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="BUY ON AMAZON"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:textSize="15dp"
-        android:backgroundTint="#D6AB04"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_description"
-        tools:text="BUY ON AMAZON" />
+        app:layout_constraintStart_toEndOf="@+id/movie_image"
+        app:layout_constraintTop_toBottomOf="@+id/movie_title"
+        tools:text="Description of movie" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
